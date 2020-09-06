@@ -1,0 +1,9 @@
+create table test5(usn integer primary key, name varchar(55),phno integer,branch varchar(20));  
+insert into test5 values(1,'sam',456217,'cs');
+insert into test5 values(2,'ram',155244,'cs');
+insert into test5 values(3,'rahul',457852,'cs');
+insert into test5 values(4,'queen',475128,'cs');
+insert into test5 values(5,'emma',5214758,'cs');  
+select * from test5;
+                                                                                      
+wwwwwwwwwwwwww
