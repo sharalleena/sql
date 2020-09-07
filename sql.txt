@@ -6,4 +6,3 @@ insert into test5 values(4,'queen',475128,'cs');
 insert into test5 values(5,'emma',5214758,'cs');  
 select * from test5;
                                                                                       
-wwwwwwwwwwwwww
