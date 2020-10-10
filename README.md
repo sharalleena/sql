@@ -1,0 +1,63 @@
+# sql query
+
+select book.book_id,title, publisher_name,authorname,branch_id 
+from book,bookauthor,bookcopies
+where book.book_id=bookauthor.book_id and book.book_id=bookcopies.book_id;
+
+
+
+
+#sql schema
+create table publisher(name varchar(100) primary key,
+                        address varchar(500),
+                        phone varchar(12));
+create table book(book_id integer primary key,
+                  title varchar(550),
+                  publisher_name varchar(524),
+                  pub_year integer,
+                 foreign key(publisher_name) references publisher(name)on delete cascade);
+create table bookauthor(book_id integer primary key,
+                        authorname varchar(45),
+                        foreign key (book_id) references book(book_id)on delete cascade);
+create table library_branch(branch_id varchar(44),branch_name varchar(45),address varchar(57),primary key(branch_id));
+create table bookcopies(book_id integer,branch_id varchar(100),noofcopies integer,primary key (book_id,branch_id),foreign key(branch_id) references library_branch(branch_id)on delete cascade, foreign key(book_id) references book(book_id)on delete cascade);
+create table booklending(book_id integer,branch_id varchar(100),card_no integer,dateout date,duedate date,primary key(book_id),foreign key(branch_id) references library_branch(branch_id)on delete cascade, 
+                         foreign key(book_id) references book(book_id) on delete cascade);     
+
+
+insert into publisher values('Mcgra','Banglore',9696500001) ;  
+    insert into publisher values('Person','Banglore',9595950000);
+    insert into publisher values('SAM pub','Manglore',9494940000);
+    insert into publisher values('IOP','Mumbai',9797970000);
+    insert into publisher values('IEEE','Dehli',909090000);
+
+    insert into book values(10,'DBMS','Mcgra',2010);
+    insert into book values(20,'SE','Person',2008);
+    insert into book values(30,'FLAT','SAM Pub',2019);
+    insert into book values(40,'BDA','IOP',2018);
+    insert into book values(50,'MP','IEEE',2020);
+
+    insert into bookauthor values(10,'Andre');
+    insert into bookauthor values(20,'Raj Kumar');
+    insert into bookauthor values(30,'Samuel');
+    insert into bookauthor values(40,'Padma');
+    insert into bookauthor values(50,'Guru');
+
+    insert into library_branch values(100,'Main Building','Manglore');
+    insert into library_branch values(200,'Ground Floor','Banglore');
+    insert into library_branch values(300,'1st Floor','Banglore');
+    insert into library_branch values(400,'Research Building','Udupi');
+    insert into library_branch values(500,'OPD Building','Manipal');
+
+    insert into bookcopies values(10 , '100' ,20);
+    insert into bookcopies values(30 , '100' ,30);
+    insert into bookcopies values(10 , '200' ,05);
+    insert into bookcopies values(20 , '300' ,15);
+    insert into bookcopies values(40 , '500' ,7);
+
+    insert into booklending values(10,'100',201,'2020-06-15','2020-06-25');
+    insert into booklending values(20,'200',202,'2020-07-10','2020-07-20');
+    insert into booklending values(30,'300',203,'2020-07-25','2020-07-30');
+    insert into booklending values(40,'400',204,'2020-08-14','2020-08-26');
+    insert into booklending values(50,'500',205,'2020-09-01','2020-09-10');
+
