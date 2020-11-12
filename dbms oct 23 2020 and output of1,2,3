@@ -74,6 +74,13 @@ where B.book_id=BA.book_id and BC.book_id=B.book_id;
 
 
 
+5)create view v as
+select b.book_id, sum(noofcopies)
+from  book b ,bookcopies bb
+where b.book_id=bb.book_id 
+group by book_id 
+
+
 output
 
 1)
@@ -94,6 +101,12 @@ book_id	title	publisher_name	authorname	branch_id
 30	FLAT	SAM Pub	      Samuel	            100
 40	BDA	  IOP	          Padma	              500
 
+5) the view v holds
+book_id      	sum(noofcopies)
+10	          25
+20	          15
+30	          30
+40	          7
 
 
 
