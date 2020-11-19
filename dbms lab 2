@@ -3,3 +3,20 @@ create table SALESMAN(Salesman_id integer,Name varchar(20),City varchar(20),Comm
 create table CUSTOMER(Customer_id integer,Cust_name varchar(20),City varchar(20),Grade varchar(2),Salesman_id integer,primary key(Customer_id),foreign key(Salesman_id) references SALESMAN(Salesman_id)on delete cascade);
                                                                                                
 create table ORDERS(Ord_No integer,Purchase_Amt integer,Ord_Date date,Customer_id integer,Salesman_id integer,primary key(Ord_No),foreign key(Customer_id) references CUSTOMER(Customer_id) on delete cascade,foreign key(Salesman_id) references SALESMAN(Salesman_id)on delete cascade);
+insert into SALESMAN values(10,'akash','mangalore',2);
+insert into SALESMAN values(20,'ram','bangalore',10);  
+insert into SALESMAN values(30,'raj','mangalore',5);
+insert into SALESMAN values(40,'kiran','mysore',15);
+                                                                                                            
+insert into CUSTOMER values(1000,'avinash','mangalore',100,10);
+insert into CUSTOMER values(2000,'kumar','bangalore',200,20);
+insert into CUSTOMER values(3000,'preethi','mysore',300,40);                                   
+insert into CUSTOMER values(4000,'smitha','mangalore',400,30);
+
+  
+insert into ORDERS values(551,5000,'2020-01-04',1000,10);  
+insert into ORDERS values(552,2500,'2020-02-05',2000,20);
+insert into ORDERS values(553,500,'2020-03-03',3000,40);
+insert into ORDERS values(554,1500,'2020-04-02',4000,30);  
+insert into ORDERS values(555,2000,'2020-06-03',2000,10);  
+                                                                                                                 
