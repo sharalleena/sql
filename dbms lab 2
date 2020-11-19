@@ -20,3 +20,15 @@ insert into ORDERS values(553,500,'2020-03-03',3000,40);
 insert into ORDERS values(554,1500,'2020-04-02',4000,30);  
 insert into ORDERS values(555,2000,'2020-06-03',2000,10);  
                                                                                                                  
+output
+2)
+select Salesman_id,Name 
+from SALESMAN s 
+where 1<
+ (select count(*) 
+  from ORDERS o
+  where s.Salesman_id =o.Salesman_id)
+  
+  Salesman_id	         Name
+        10           	akash
+  
