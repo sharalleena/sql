@@ -21,15 +21,14 @@ insert into ORDERS values(554,1500,'2020-04-02',4000,30);
 insert into ORDERS values(555,2000,'2020-06-03',2000,10);  
                                                                                                                  
 output
-1)select Grade,count(distinct Customer_id)
+1)select Grade, count(*)
 from CUSTOMER 
- group by Grade having Grade>
-   (select avg(Grade) 
-    from CUSTOMER
-    WHERE City='bangalore');
- Grade	count(distinct Customer_id)
-300	              1
-400	              1
+where Grade >(select  avg(Grade) 
+              from CUSTOMER 
+              where City='bangalore')
+group by Grade
+Grade	  count(*)
+400	    2
 2)
 select Salesman_id,Name 
 from SALESMAN s 
