@@ -39,6 +39,31 @@ where 1<
   
   Salesman_id	         Name
         10           	akash
+3)select *
+from SALESMAN
+where Salesman_id in(select  Salesman_id 
+              from SALESMAN s
+              where exists(select *
+                          from CUSTOMER c
+                          where s.Salesman_id =c.Salesman_id )
+    union
+              select  Salesman_id 
+              from SALESMAN s
+              where  not exists(select *
+                          from CUSTOMER c
+                          where s.Salesman_id =c.Salesman_id ))
+ output
+ Salesman_id	Name	    City	       Commission
+10	          akash     mangalore   	2
+20	          ram	      bangalore	    10
+30	          raj	      mangalore    	5
+40	          kiran    	mysore	      15
+50          	sherya	  bangalore    	3
+4)create view  v as 
+select Salesman_id 
+from ORDERS
+group by Ord_Date having max(Ord_Date);
+
 5)
 delete from ORDERS
 where Salesman_id=10;
