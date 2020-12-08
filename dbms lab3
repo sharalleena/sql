@@ -1,0 +1,25 @@
+create table DIRECTOR(Dir_id varchar(8),
+                      Dir_Name varchar(25),
+                      Dir_Phone varchar(12),
+                      primary key (Dir_id));
+create table ACTOR(Act_id varchar(8),
+                  Act_Name varchar(8),
+                  Act_Gender varchar(6),
+                  primary key(Act_id));   
+create table MOVIES(Mov_id varchar(8),
+                    Mov_Title varchar(80),
+                    Mov_Year integer,
+                    Mov_Lang varchar(100),
+                    Dir_id varchar(8),
+                    primary key(Mov_id),
+                    foreign key(Dir_id)references DIRECTOR(Dir_id));
+create table MOVIE_CAST(Act_id varchar(8),
+                        Mov_id varchar(8),
+                        Role varchar(8),
+                        primary key(Act_id, Mov_id),
+                        foreign key(Mov_id)references MOVIES(Mov_id),
+                        foreign key(Act_id)references ACTOR(Act_id));                                                           
+create table RATING(Mov_id varchar(8),
+                    Rev_Stars varchar(8),
+                    primary key(Mov_id),
+                    foreign key(Mov_id)references MOVIES(Mov_id));                              
