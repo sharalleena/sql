@@ -3,7 +3,7 @@ create table DIRECTOR(Dir_id varchar(8),
                       Dir_Phone varchar(12),
                       primary key (Dir_id));
 create table ACTOR(Act_id varchar(8),
-                  Act_Name varchar(8),
+                  Act_Name varchar(80),
                   Act_Gender varchar(6),
                   primary key(Act_id));   
 create table MOVIES(Mov_id varchar(8),
@@ -22,4 +22,29 @@ create table MOVIE_CAST(Act_id varchar(8),
 create table RATING(Mov_id varchar(8),
                     Rev_Stars varchar(8),
                     primary key(Mov_id),
-                    foreign key(Mov_id)references MOVIES(Mov_id));                              
+                    foreign key(Mov_id)references MOVIES(Mov_id));                            
+                                                         
+insert into DIRECTOR values('123','Hitchcock','4785158');
+insert into DIRECTOR values('777','Steven Spielberg','951234');                                                         
+                                                         
+insert into ACTOR values('123e','sam','m');
+insert into ACTOR values('143r','ram','m');                           
+insert into ACTOR values( '235j','b d won','m');                           
+insert into ACTOR values('124j',	'laura dern','f');  
+insert into ACTOR values('145o','carl','m');        
+insert into ACTOR values('147g','peter','m');    
+                                                         
+
+insert into MOVIES values('99q','the birds','1963','eng','123');    
+insert into MOVIES values('457q','rebecca','1940','eng','123');    
+insert into MOVIES values('711o','jaws','1945','eng','777');               
+insert into MOVIES values('568u','jurasic park','1993','eng','777');                                                         
+                                                         
+insert into MOVIE_CAST values('123e	99q	tailor');
+insert into MOVIE_CAST values('143r	457q	hunter'); 
+insert into MOVIE_CAST values('235j	568u	doctor');
+insert into MOVIE_CAST values('124j	568u	researcher');
+insert into MOVIE_CAST values('147g	711o	student'); 
+insert into MOVIE_CAST values('145o	568u	teacher');                                                          
+
+    
