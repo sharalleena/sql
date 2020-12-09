@@ -15,7 +15,7 @@ create table MOVIES(Mov_id varchar(8),
                     foreign key(Dir_id)references DIRECTOR(Dir_id));
 create table MOVIE_CAST(Act_id varchar(8),
                         Mov_id varchar(8),
-                        Role varchar(8),
+                        Role varchar(80),
                         primary key(Act_id, Mov_id),
                         foreign key(Mov_id)references MOVIES(Mov_id),
                         foreign key(Act_id)references ACTOR(Act_id));                                                           
@@ -25,26 +25,47 @@ create table RATING(Mov_id varchar(8),
                     foreign key(Mov_id)references MOVIES(Mov_id));                            
                                                          
 insert into DIRECTOR values('123','Hitchcock','4785158');
-insert into DIRECTOR values('777','Steven Spielberg','951234');                                                         
+insert into DIRECTOR values('777','Steven Spielberg','951234'); 
+insert into DIRECTOR values('9','x','97987');  
+insert into DIRECTOR values('8','y','465456'); 
+insert into DIRECTOR values('7','madhur','313135');   
+  
                                                          
 insert into ACTOR values('123e','sam','m');
 insert into ACTOR values('143r','ram','m');                           
-insert into ACTOR values( '235j','b d won','m');                           
-insert into ACTOR values('124j',	'laura dern','f');  
+insert into ACTOR values('235j','bd wong','m');                           
+insert into ACTOR values('124j','laura dern','f');  
 insert into ACTOR values('145o','carl','m');        
-insert into ACTOR values('147g','peter','m');    
-                                                         
-
+insert into ACTOR values('147g','peter','m');
+insert into ACTOR values('44m','aa','m');
+insert into ACTOR values('55uu','hh','m'); 
+insert into ACTOR values('87dd','oo','f');                            
+insert into ACTOR values('21gf','iii','f');                                                         
 insert into MOVIES values('99q','the birds','1963','eng','123');    
 insert into MOVIES values('457q','rebecca','1940','eng','123');    
 insert into MOVIES values('711o','jaws','1945','eng','777');               
-insert into MOVIES values('568u','jurasic park','1993','eng','777');                                                         
-                                                         
-insert into MOVIE_CAST values('123e	99q	tailor');
-insert into MOVIE_CAST values('143r	457q	hunter'); 
-insert into MOVIE_CAST values('235j	568u	doctor');
-insert into MOVIE_CAST values('124j	568u	researcher');
-insert into MOVIE_CAST values('147g	711o	student'); 
-insert into MOVIE_CAST values('145o	568u	teacher');                                                          
+insert into MOVIES values('568u','jurasic park','1993','eng','777');
+insert into MOVIES values('99pp','joker','2019','eng','9');
+insert into MOVIES values('88uu','coco','2017','eng','8'); 
+insert into MOVIES values('44xx','fashion','2008','eng','7');
 
-    
+insert into MOVIE_CAST values('123e','99q','tailor');
+insert into MOVIE_CAST values('143r','457q','hunter'); 
+insert into MOVIE_CAST values('235j','568u','doctor');
+insert into MOVIE_CAST values('124j','568u','researcher');
+insert into MOVIE_CAST values('147g','711o','student'); 
+insert into MOVIE_CAST values('123e','711o','spy');
+insert into MOVIE_CAST values('145o','568u','teacher');
+insert into MOVIE_CAST values('44m','99pp','model');
+insert into MOVIE_CAST values('55uu','88uu','spy');
+insert into MOVIE_CAST values('87dd','44xx','cat'); 
+insert into MOVIE_CAST values('21gf','44xx','ghost');  
+                                                         
+                                                         
+insert into  RATING values('99q','4');
+insert into  RATING values('457q','4'); 
+insert into  RATING values('711o','3'); 
+insert into  RATING values('568u','4'); 
+insert into  RATING values('99pp','0'); 
+insert into  RATING values('88uu','4'); 
+insert into  RATING values('44xx','5');                                                         
