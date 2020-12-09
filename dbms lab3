@@ -68,4 +68,13 @@ insert into  RATING values('711o','3');
 insert into  RATING values('568u','4'); 
 insert into  RATING values('99pp','0'); 
 insert into  RATING values('88uu','4'); 
-insert into  RATING values('44xx','5');                                                         
+insert into  RATING values('44xx','5');   
+
+
+1)select Mov_Title
+from MOVIES m,DIRECTOR d
+where  m.Dir_id=d.Dir_id and d.Dir_Name='Hitchcock';
+
+Mov_Title
+rebecca
+the birds
