@@ -78,3 +78,40 @@ where  m.Dir_id=d.Dir_id and d.Dir_Name='Hitchcock';
 Mov_Title
 rebecca
 the birds
+
+2)select Mov_Title
+from MOVIES m,MOVIE_CAST mc
+where m.Mov_id=mc.Mov_id and
+     Act_id in(select Act_id
+               from MOVIE_CAST
+               group by Act_id
+               having count(*)>1)
+
+Mov_Title
+jaws
+the birds
+
+5)create view  upp as
+select r.Rev_Stars,d.Dir_Name,d.Dir_id
+from MOVIES m,RATING r,DIRECTOR d
+where m.Mov_id=r.Mov_id and m.Dir_id=d.Dir_id and
+      d.Dir_Name='Steven Spielberg';
+select *
+from upp;      
+update upp
+set Rev_Stars=5;
+
+select *
+from upp
+Rev_Stars	    Dir_Name	           Dir_id
+4	         Steven Spielberg	        777
+3	         Steven Spielberg         777
+Query #3 Execution time: 8ms
+There are no results to be displayed.
+Query #4 Execution time: 0ms
+Rev_Stars        Dir_Name	        Dir_id
+5        	Steven Spielberg	        777
+5	        Steven Spielberg	        777
+
+
+
