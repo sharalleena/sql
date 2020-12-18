@@ -90,6 +90,14 @@ where m.Mov_id=mc.Mov_id and
 Mov_Title
 jaws
 the birds
+4)select Mov_Title,Rev_Stars  
+from RATING r,MOVIES m
+where r.Mov_id=m.Mov_id and
+    Rev_Stars in(select max(Rev_Stars)
+                 from RATING)
+order by Mov_Title;       
+Mov_Title    	Rev_Stars
+fashion           5
 
 5)create view  upp as
 select r.Rev_Stars,d.Dir_Name,d.Dir_id
