@@ -1,4 +1,4 @@
-create table STUDENT(USN varchar(9), 
+create table STUDENT(USN varchar(90), 
 SName varchar(25), 
 Address varchar(90), 
 Phone integer, 
@@ -6,11 +6,11 @@ Gender varchar(8),
 primary key(USN));
 
 create table SEMSEC(SSID varchar(8),
- Sem varchar(8),
+ Sem integer,
  Sec varchar(8),
 primary key(SSID));
 
-create table CLASS(USN varchar(9),
+create table CLASS(USN varchar(90),
  SSID varchar(9),
 primary key(USN),
 foreign key(USN)references STUDENT(USN),
@@ -22,7 +22,7 @@ create table COURSE(Subcode varchar(9),
  Credits integer,
 primary key(Subcode) );
 
-create table IAMARKS(USN varchar(9),
+create table IAMARKS(USN varchar(90),
  Subcode varchar(9),
  SSID varchar(8),
  Test1 integer,
@@ -34,3 +34,23 @@ foreign key(USN)references STUDENT(USN),
  foreign key(SSID)references SEMSEC(SSID),
 foreign key(Subcode)references COURSE(Subcode));
 
+insert into STUDENT values('44io4','raja','qwe',7894,'m');   
+insert into STUDENT values('788op','emma','rty',1236,'m'); 
+insert into STUDENT values('io789','kristen','yui',8521,'f'); 
+insert into STUDENT values('bnm12','james','asd',9875,'f'); 
+insert into STUDENT values('sde23','clar','xyx',4852,'f'); 
+insert into STUDENT values('we326','willow','rgf',21554,'m');     
+insert into STUDENT values('wgt56','betty','hby',32568,'m'); 
+insert into STUDENT values('erthk7','elle','jnt',12589,'f'); 
+insert into STUDENT values('1BI15CS101','dofo','bhy',7845,'f'); 
+                                      
+insert into SEMSEC values('ppp',4,'c');
+insert into SEMSEC values('ooo',4,'c'); 
+insert into SEMSEC values('iii',4,'c');
+insert into SEMSEC values('uuu',3,'c'); 
+insert into SEMSEC values('5lfg',4,'b');
+insert into SEMSEC values('wer4',3,'b'); 
+insert into SEMSEC values('wsd4',3,'a');   
+insert into SEMSEC values('q243',3,'a');  
+insert into SEMSEC values('plm4',2,'a');                                  
+                                      
