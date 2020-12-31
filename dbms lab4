@@ -54,3 +54,19 @@ insert into SEMSEC values('wsd4',3,'a');
 insert into SEMSEC values('q243',3,'a');  
 insert into SEMSEC values('plm4',2,'a');                                  
                                       
+insert into CLASS values('44io4','ppp');
+insert into CLASS values('788op','ooo');
+insert into CLASS values('io789','iii');
+insert into CLASS values('bnm12','uuu');
+insert into CLASS values('sde23','5lfg');
+insert into CLASS values('we326','wer4');
+insert into CLASS values('wgt56','wsd4');
+insert into CLASS values('erthk7','q243');
+insert into CLASS values('1BI15CS101','plm4');                             
+  
+insert into COURSE values('pok99','spanish','2','5');
+insert into COURSE values('jki56','python','2','5');    
+                                      
+insert into IAMARKS values('1BI15CS101','pok99','plm4',99,98,100,297);
+insert into IAMARKS values('1BI15CS101','jki56','plm4',73,78,85,236);   
+                                                                         
