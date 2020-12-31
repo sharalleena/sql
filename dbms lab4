@@ -1,28 +1,28 @@
-create table STUDENT(USN varchar(90), 
+create table STUDENT(USN varchar(9), 
 SName varchar(25), 
 Address varchar(90), 
-Phone  integer), 
+Phone integer, 
 Gender varchar(8),
 primary key(USN));
 
-create table SEMSEC(SSID varchar(80),
+create table SEMSEC(SSID varchar(8),
  Sem varchar(8),
  Sec varchar(8),
 primary key(SSID));
 
-create table CLASS(USN varchar(90),
+create table CLASS(USN varchar(9),
  SSID varchar(9),
 primary key(USN),
 foreign key(USN)references STUDENT(USN),
 foreign key(SSID)references SEMSEC(SSID));
 
-create table COURSE(Subcode varchar(90),
+create table COURSE(Subcode varchar(9),
  Title varchar(25),
  Sem varchar(8),
  Credits integer,
 primary key(Subcode) );
 
-create table IAMARKS(USN varchar(90),
+create table IAMARKS(USN varchar(9),
  Subcode varchar(9),
  SSID varchar(8),
  Test1 integer,
@@ -30,6 +30,7 @@ create table IAMARKS(USN varchar(90),
  Test3 integer, 
  FinalIA integer,
  primary key(USN, Subcode, SSID),
- foreign key(USN)references STUDENT(USN),
+foreign key(USN)references STUDENT(USN),
  foreign key(SSID)references SEMSEC(SSID),
- foreign key(Subcode)references COURSE(Subcode));
+foreign key(Subcode)references COURSE(Subcode));
+
