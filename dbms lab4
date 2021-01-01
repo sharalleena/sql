@@ -69,4 +69,14 @@ insert into COURSE values('jki56','python','2','5');
                                       
 insert into IAMARKS values('1BI15CS101','pok99','plm4',99,98,100,297);
 insert into IAMARKS values('1BI15CS101','jki56','plm4',73,78,85,236);   
-                                                                         
+
+select *
+from STUDENT s,SEMSEC ss,CLASS c
+where s.USN=c.USN and ss.SSID=c.SSID and Sem=4 and sec='c';
+
+USN	SName	Address	Phone	Gender	SSID	Sem	Sec	USN	SSID
+io789	kristen	yui	8521	f	iii	4	c	io789	iii
+788op	emma	rty	1236	m	ooo	4	c	788op	ooo
+44io4	raja	qwe	7894	m	ppp	4	c	44io4	ppp
+
+
