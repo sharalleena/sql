@@ -79,4 +79,19 @@ io789	kristen	yui	8521	f	iii	4	c	io789	iii
 788op	emma	rty	1236	m	ooo	4	c	788op	ooo
 44io4	raja	qwe	7894	m	ppp	4	c	44io4	ppp
 
+2)select Sem,Sec,Gender,count(*)
+from STUDENT s,SEMSEC ss,CLASS c
+where s.USN=c.Usn and c.SSID=ss.SSID
+group by Sem,Sec,Gender
+order by Sem
+
+Sem	Sec	Gender	count(*)
+2	a	f	1
+3	a	f	1
+3	a	m	1
+3	b	m	1
+3	c	f	1
+4	b	f	1
+4	c	f	1
+4	c	m	2
 
