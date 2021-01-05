@@ -1,4 +1,4 @@
-schema sql
+schema sql...dbms oct 23 2020 and output of1,2,3
 create table publisher(name varchar(100) primary key,
                         address varchar(500),
                         phone varchar(12));
