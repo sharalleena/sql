@@ -94,9 +94,19 @@ Mov_Title
 jaws
 the birds
 
+3)SELECT  distinct Act_id from MOVIES M join MOVIE_CAST MC
+        on M.Mov_id=MC.Mov_id
+        where Mov_Year not  between 2000 and 2015;
 
-
-
+Act_id
+143r
+124j
+145o
+235j
+123e
+147g
+55uu
+44m
 4)select Mov_Title,Rev_Stars  
 from RATING r,MOVIES m
 where r.Mov_id=m.Mov_id and
