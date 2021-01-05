@@ -84,12 +84,12 @@ group by book_id
 output
 
 1)
-book_id	title	publisher_name	authorname	branch_id
-10	DBMS	     Mcgra	         Andre	        100
-30	FLAT	     SAM Pub	       Samuel	        100
-10	DBMS	     Mcgra	         Andre	        200
-20	SE	       Person	         Raj Kumar	    300
-40	BDA	       IOP	            Padma	        500
+book_id	title	publisher_name	authorname	branch_id	noofcopies
+10	   DBMS	   	Mcgra	   	   	Andre		    100		   20
+10	   	DBMS	   	Mcgra		   	Andre		    200	    	5
+20	   	SE		   Person	    	Raj Kumar		300		   15
+30	   	FLAT	   	SAM Pub	   	Samuel		  100		   30
+40	   	BDA		   IOP		     Padma		   500		   7
 
 2)
 card_no
