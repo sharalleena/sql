@@ -62,7 +62,21 @@ where Salesman_id in(select  Salesman_id
 4)create view  v as 
 select Salesman_id 
 from ORDERS
-group by Ord_Date having max(Ord_Date);
+group by Ord_Date having max(Ord_Date)wronh;
+
+create view vi as
+ select Salesman_id 
+ from ORDERS  
+ where Purchase_Amt 
+ in(select max(Purchase_Amt)
+    from ORDERS 
+    group by Ord_Date);
+select *
+from vi
+
+Salesman_id
+10
+20
 
 5)
 delete from ORDERS
