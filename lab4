@@ -108,19 +108,33 @@ where s.USN=ia.USN and ia.Subcode=st.Subcode and s.USN='1BI15CS101';
 select *         
 from test1
 
-USN       	SName	       Subcode	      Title	    Test1
-1BI15CS101	dofo	       jki56	       python	       73
-1BI15CS101	dofo	       pok99	       spanish	       99
+USN	        SName	Subcode	Title	Test1
+1BI15CS101	dofo	jki56	python	12
+1BI15CS101	dofo	pok99	spanish	15
 
-4)
-update IAMARKS
+4)update IAMARKS
 set FinalIA=((Test1+Test2+Test3)-least(Test1,Test2,Test3))/2;
 
 select  *
 from IAMARKS;
 
-USN	Subcode	SSID	Test1	Test2	Test3	FinalIA
-1BI15CS101	jki56	plm4	73	78	85	81.5
-1BI15CS101	pok99	plm4	99	98	100	99.5
-44io4	        jki56	ppp	69	85	99	92
-44io4      	pok99	ppp	89	91	79	90
+USN	       Subcode	SSID	Test1	Test2	Test3	FinalIA
+1BI15CS101	jki56	plm4	12	19	14	16.5
+1BI15CS101	pok99	plm4	15	16	18	17
+44io4	        jki56	ppp	20	16	19	19.5
+44io4	         pok99	ppp	19	15	20	19.5
+
+5)
+select s.USN, s.SName,FinalIA
+(case
+   when FinalIA>=17 and FinalIA <=20 then ' outstaning'
+  when FinalIA>=12 and  FinalIA<=17 then ' average'
+  when FinalIA<12  then 'weak'
+ end)as CAT
+from STUDENT s,IAMARKS ia,CLASS c,SEMSEC ss
+where s.USN = ia.USN and
+      s.USN = c.USN and
+      c.SSID = ss. SSID and
+      sem=8  and (sec = 'a' or sec ='b' or sec='c');
+      
+      error
