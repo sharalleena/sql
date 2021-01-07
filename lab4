@@ -34,6 +34,8 @@ foreign key(USN)references STUDENT(USN),
  foreign key(SSID)references SEMSEC(SSID),
 foreign key(Subcode)references COURSE(Subcode));
 
+
+
 insert into STUDENT values('44io4','raja','qwe',7894,'m');   
 insert into STUDENT values('788op','emma','rty',1236,'m'); 
 insert into STUDENT values('io789','kristen','yui',8521,'f'); 
@@ -107,4 +109,15 @@ USN       	SName	       Subcode	      Title	    Test1
 1BI15CS101	dofo	       jki56	       python	       73
 1BI15CS101	dofo	       pok99	       spanish	       99
 
-DB Fiddle – Crafted with ♥ by Status200 in the United Kingdom.
+4)
+update IAMARKS
+set FinalIA=((Test1+Test2+Test3)-least(Test1,Test2,Test3))/2;
+
+select  *
+from IAMARKS;
+
+USN	Subcode	SSID	Test1	Test2	Test3	FinalIA
+1BI15CS101	jki56	plm4	73	78	85	81.5
+1BI15CS101	pok99	plm4	99	98	100	99.5
+44io4	        jki56	ppp	69	85	99	92
+44io4      	pok99	ppp	89	91	79	90
