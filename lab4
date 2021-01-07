@@ -95,3 +95,16 @@ Sem	Sec	Gender	count(*)
 4	c	f	1
 4	c	m	2
 
+3)create view test1 as
+select s.USN,s.SName,ia.Subcode,Title,Test1
+from STUDENT s,IAMARKS ia,COURSE st
+where s.USN=ia.USN and ia.Subcode=st.Subcode and s.USN='1BI15CS101';
+
+select *         
+from test1
+
+USN       	SName	       Subcode	      Title	    Test1
+1BI15CS101	dofo	       jki56	       python	       73
+1BI15CS101	dofo	       pok99	       spanish	       99
+
+DB Fiddle – Crafted with ♥ by Status200 in the United Kingdom.
