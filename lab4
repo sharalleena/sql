@@ -28,7 +28,7 @@ create table IAMARKS(USN varchar(90),
  Test1 integer,
  Test2 integer, 
  Test3 integer, 
- FinalIA integer,
+ FinalIA real,
  primary key(USN, Subcode, SSID),
 foreign key(USN)references STUDENT(USN),
  foreign key(SSID)references SEMSEC(SSID),
@@ -71,6 +71,8 @@ insert into COURSE values('jki56','python','2','5');
                                       
 insert into IAMARKS values('1BI15CS101','pok99','plm4',99,98,100,297);
 insert into IAMARKS values('1BI15CS101','jki56','plm4',73,78,85,236);   
+insert into IAMARKS values('44io4','pok99','ppp',89,91,79,297);
+insert into IAMARKS values('44io4','jki56','ppp',69,85,99,236);   
 
 select *
 from STUDENT s,SEMSEC ss,CLASS c
