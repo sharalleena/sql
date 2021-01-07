@@ -46,7 +46,7 @@ insert into STUDENT values('wgt56','betty','hby',32568,'m');
 insert into STUDENT values('erthk7','elle','jnt',12589,'f'); 
 insert into STUDENT values('1BI15CS101','dofo','bhy',7845,'f'); 
                                       
-insert into SEMSEC values('ppp',4,'c');
+insert into SEMSEC values('ppp',8,'c');
 insert into SEMSEC values('ooo',4,'c'); 
 insert into SEMSEC values('iii',4,'c');
 insert into SEMSEC values('uuu',3,'c'); 
@@ -125,7 +125,7 @@ USN	       Subcode	SSID	Test1	Test2	Test3	FinalIA
 44io4	         pok99	ppp	19	15	20	19.5
 
 5)
-select s.USN, s.SName,FinalIA
+select s.USN, s.SName,FinalIA,
 (case
    when FinalIA>=17 and FinalIA <=20 then ' outstaning'
   when FinalIA>=12 and  FinalIA<=17 then ' average'
@@ -137,4 +137,8 @@ where s.USN = ia.USN and
       c.SSID = ss. SSID and
       sem=8  and (sec = 'a' or sec ='b' or sec='c');
       
-      error
+      
+
+USN	  SName	FinalIA  	CAT
+44io4	raja 	18.33    	outstaning
+44io4	raja	 18	       outstaning
