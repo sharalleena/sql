@@ -69,10 +69,11 @@ insert into CLASS values('1BI15CS101','plm4');
 insert into COURSE values('pok99','spanish','2','5');
 insert into COURSE values('jki56','python','2','5');    
                                       
-insert into IAMARKS values('1BI15CS101','pok99','plm4',99,98,100,297);
-insert into IAMARKS values('1BI15CS101','jki56','plm4',73,78,85,236);   
-insert into IAMARKS values('44io4','pok99','ppp',89,91,79,297);
-insert into IAMARKS values('44io4','jki56','ppp',69,85,99,236);   
+insert into IAMARKS values('1BI15CS101','pok99','plm4',99,98,100,99);
+insert into IAMARKS values('1BI15CS101','jki56','plm4',73,7,85,78.66);   
+insert into IAMARKS values('44io4','pok99','ppp',89,91,79,);
+insert into IAMARKS values('44io4','jki56','ppp',69,85,99,84.33);   
+  
 
 select *
 from STUDENT s,SEMSEC ss,CLASS c
