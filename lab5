@@ -31,37 +31,4 @@ PNo integer,
 Hours integer,
 primary key (SSN, PNo),
 foreign key (PNo) references PROJECT(PNo),
-foreign key (SSN) references EMPLOYEE(SSN));                               create table DEPARTMENT(DNo integer, 
- DName varchar(20),
- MgrSSN varchar(20),
- MgrStartDate date,
- primary key (DNo));
-
-create table EMPLOYEE(SSN varchar(20),
- Name varchar(20),
- Address varchar(20),
- Sex varchar(20),
- Salary integer,
- SuperSSN varchar(20),
- DNo integer,
- primary key (SSN),
- foreign key (DNo) references DEPARTMENT(DNo));
-              
-create table DLOCATION(DNo integer,
- DLoc varchar(20),
- primary key (DNo,DLoc),
-foreign key (DNo) references DEPARTMENT(DNo));
-                                        
-create table PROJECT(PNo integer,
- PName varchar(20), 
- PLocation varchar(20), 
- DNo integer,
-primary key (PNo),
-foreign key (DNo) references DEPARTMENT(DNo));
-                                        
-create table WORKS_ON(SSN varchar(20), 
-PNo integer, 
-Hours integer,
-primary key (SSN, PNo),
-foreign key (PNo) references PROJECT(PNo),
 foreign key (SSN) references EMPLOYEE(SSN));                               
