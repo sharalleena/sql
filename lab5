@@ -37,8 +37,8 @@ insert into DEPARTMENT values(5,'Research',333445555,'1988-05-22');
 insert into DEPARTMENT values(4,'Accounts',987654321,'1995-01-01');
 insert into DEPARTMENT values(1,'Headquarters',888665555,'1981-06-19');
 
-insert into EMPLOYEE values (123456789,'Scott','731 Fondren, Houston, TX','m',20000,,5);
-insert into EMPLOYEE values (333445555,'Scott','731 Fondren','m',8000,,5);
+insert into EMPLOYEE values(123456789,'Scott','xyx','m',20000,333445555,5);
+insert into EMPLOYEE values (333445555,'Scott','xyxx','m',8000,888665555,5);
 insert into EMPLOYEE values (999887777,'a','731 Fondren','m',74158,,5);
 insert into EMPLOYEE values (987654321,'q','731 Fondren','f',78451,,5);
 insert into EMPLOYEE values (666884444,'s','731 Fondren','f',14789,,5);
