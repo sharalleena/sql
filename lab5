@@ -33,18 +33,21 @@ primary key (SSN, PNo),
 foreign key (PNo) references PROJECT(PNo),
 foreign key (SSN) references EMPLOYEE(SSN));                               
 
-insert into DEPARTMENT values(5,'Research',333445555,'1988-05-22');
+insert into DEPARTMENT values(5,'iot',333445555,'1988-05-22');
 insert into DEPARTMENT values(4,'Accounts',987654321,'1995-01-01');
 insert into DEPARTMENT values(1,'Headquarters',888665555,'1981-06-19');
 
-insert into EMPLOYEE values(123456789,'Scott','xyx','m',20000,333445555,5);
-insert into EMPLOYEE values (333445555,'Scott','xyxx','m',8000,888665555,5);
-insert into EMPLOYEE values (999887777,'a','731 Fondren','m',74158,,5);
-insert into EMPLOYEE values (987654321,'q','731 Fondren','f',78451,,5);
-insert into EMPLOYEE values (666884444,'s','731 Fondren','f',14789,,5);
-insert into EMPLOYEE values (453453453,'z','731 Fondren','f',15478,,5);
-insert into EMPLOYEE values (987987987,'c','731 Fondren','f',45988,,4);
-insert into EMPLOYEE values (888665555,'n','731 Fondren','f',23584,,1);
+insert into EMPLOYEE values (123456789,'Scott','Houston','m',20000,333445555,5);
+insert into EMPLOYEE values (333445555,'Scott','Fondren','m',8000,888665555,5);
+insert into EMPLOYEE values (999887777,'a','Fondren','m',74158,987654321,4);
+insert into EMPLOYEE values (987654321,'q','Fondren','f',78451,888665555,4);
+insert into EMPLOYEE values (666884444,'s','Fondren','f',14789,333445555,5);
+insert into EMPLOYEE values (453453453,'z','Fondren','f',15478,333445555,5);
+insert into EMPLOYEE values (987987987,'c','Fondren','f',45988,987654321,4);
+insert into EMPLOYEE values (888665555,'n','Fondren','f',23584,NULL,1);
+insert into EMPLOYEE values (877665555,'sa','Fondren','m',130584,987654321,4);
+insert into EMPLOYEE values (845165555,'re','Fondren','f',443584,987654321,4);
+insert into EMPLOYEE values (848165555,'ri','Fondren','m',448584,987654321,4);
 
 insert into DLOCATION values(1,'Houston');
 insert into DLOCATION values(4,'Stafford');
@@ -60,3 +63,30 @@ insert into PROJECT values(20,'a','h',1);
 
 
 
+insert into WORKS_ON values('123456789',2,55);
+insert into WORKS_ON values('123456789',3,4);
+insert into WORKS_ON values('666884444',1,44);
+insert into WORKS_ON values('453453453',2,4);
+insert into WORKS_ON values('453453453',3,2);
+insert into WORKS_ON values('333445555',2,21);
+insert into WORKS_ON values('333445555',1,99);
+insert into WORKS_ON values('333445555',3,3);
+insert into WORKS_ON values('999887777',10,77);
+
+1)
+(select distinct PNo
+ from PROJECT p,DEPARTMENT d,EMPLOYEE e 
+ where p.DNo=d.DNo 
+ and SSN=MgrSSN and Name='Scott')
+ union
+ (select distinct p.PNo
+ from PROJECT p,WORKS_ON w,EMPLOYEE e 
+ where w.SSN=e.SSN and Name='Scott'
+ )
+ 
+ PNo
+1
+2
+3
+20
+10
