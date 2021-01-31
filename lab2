@@ -52,6 +52,30 @@ where Salesman_id in(select  Salesman_id
               where  not exists(select *
                           from CUSTOMER c
                           where s.Salesman_id =c.Salesman_id ))
+                          
+                          
+                          my one
+                          
+                          
+                          select  s.Salesman_id ,'have customers in same city'
+              from SALESMAN s
+              where exists(select *
+                          from CUSTOMER c
+                          where s.Salesman_id =c.Salesman_id 
+                          and s.City=c.City)
+    union
+              select  s.Salesman_id ,'not have customers in same city'
+              from SALESMAN s ,CUSTOMER c
+                          where s.Salesman_id =c.Salesman_id 
+                               and not s.city =c.City
+                               
+output
+Salesman_id	  have customers in same city
+20	           have customers in same city
+30	           have customers in same city
+40	           have customers in same city
+10	           not have customers in same city
+
  output
  Salesman_id	Name	    City	       Commission
 10	          akash     mangalore   	2
